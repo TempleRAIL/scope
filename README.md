@@ -12,7 +12,7 @@ Here are three GIFs showing the occupancy grid map prediction comparison results
 ![spot_prediction_demo](demo/3.OGM-Spot_5th_OGM_Prediction_Demo.gif "spot_prediction_demo") 
 
 ## Notice
-Note that in our previous CoRL paper ["Stochastic Occupancy Grid Map Prediction in Dynamic Scenes"](https://openreview.net/pdf?id=fSmkKmWM5Ry)([arXiv](https://arxiv.org/abs/2210.08577)), we used the acronym SOGMP (Stochastic Occupancy Grid Map Predictor) instead of SCOPE. The scope and scope++ algorithms were SOGMP and SOGMP++ in our previous Github respositery ["SOGMP"]{https://github.com/TempleRAIL/SOGMP}.
+Note that in our previous CoRL paper ["Stochastic Occupancy Grid Map Prediction in Dynamic Scenes"](https://openreview.net/pdf?id=fSmkKmWM5Ry)([arXiv](https://arxiv.org/abs/2210.08577)), we used the acronym SOGMP (Stochastic Occupancy Grid Map Predictor) instead of SCOPE. The scope and scope++ algorithms were SOGMP and SOGMP++ in our previous Github repository [SOGMP](https://github.com/TempleRAIL/SOGMP).
 
 ## Requirements
 * python 3.7
@@ -25,6 +25,27 @@ There are three different datasets collected by three different robot models (i.
 * 1.OGM-Turtlebot2: collected by a simulated Turtlebot2 with a maximum speed of 0.8 m/s navigates around a lobby Gazebo environment with 34 moving pedestrians using random start points and goal points
 * 2.OGM-Jackal: extracted from two sub-datasets of the socially compliant navigation dataset (SCAND), which was collected by the Jackal robot with a maximum speed of 2.0 m/s at the outdoor environment of the UT Austin
 * 3.OGM-Spot: extracted from two sub-datasets of the socially compliant navigation dataset (SCAND), which was collected by the Spot robot with a maximum speed of 1.6 m/s at the Union Building of the UT Austin
+
+## Usage: so-scope (Fastest inference speed, can be deployed on resource-limited robots and combined with other learning-based algorithms)
+* Download OGM-datasets from https://doi.org/10.5281/zenodo.7051560 and decompress them to the home directory:
+```Bash
+cd ~
+tar -zvxf OGM-datasets.tar.gz
+```
+* Training:
+```Bash
+git clone https://github.com/TempleRAIL/scope.git
+cd scope 
+git checkout so-scope
+sh run_train.sh ~/data/OGM-datasets/OGM-Turtlebot2/train ~/data/OGM-datasets/OGM-Turtlebot2/val
+```
+* Inference Demo on OGM-Turtlebot2 dataset: 
+```Bash
+git clone https://github.com/TempleRAIL/scope.git
+cd scope 
+git checkout so-scope
+sh run_eval_demo.sh  ~/data/OGM-datasets/OGM-Turtlebot2/test
+```
 
 ## Usage: scope (The inference speed is faster than scope++)
 * Download OGM-datasets from https://doi.org/10.5281/zenodo.7051560 and decompress them to the home directory:
