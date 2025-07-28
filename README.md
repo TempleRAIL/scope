@@ -1,6 +1,6 @@
 # SCOPE: Stochastic Cartographic Occupancy Prediction Engine for Uncertainty-Aware Dynamic Navigation
 
-Implementation code for our paper  ["SCOPE: Stochastic Cartographic Occupancy Prediction Engine for Uncertainty-Aware Dynamic Navigation"](https://doi.org/10.1109/TRO.2025.3578234) [[arXiv](https://arxiv.org/abs/2407.00144.pdf)]. 
+Implementation code for our paper  ["SCOPE: Stochastic Cartographic Occupancy Prediction Engine for Uncertainty-Aware Dynamic Navigation"](https://doi.org/10.1109/TRO.2025.3578234) [[arXiv](https://arxiv.org/abs/2407.00144.pdf)] in IEEE Transactions on Robotics (T-RO) 2025. 
 Video demos can be found at [multimedia demonstrations](https://youtu.be/xJBtWQDLU04).
 A series of deep neural network-based Stochastic Cartographic Occupancy Prediction Engines (i.e., scope++, scope, and so-scope) are implemented by the Pytorch. 
 Here are three GIFs showing the occupancy grid map prediction comparison results (0.5s, or 5 time steps into the future) of our proposed scope++, scope, and so-scope algorithms, and ConvLSTM, PhyDNet, DeepTracking, and scope-NEMC baselines on three different datasets with different robot models.
